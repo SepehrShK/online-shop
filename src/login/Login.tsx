@@ -21,7 +21,7 @@ const Login = () => {
         e.preventDefault()
         try {
             //بررسی اینکه اطلاعات درست هست یا نه
-            const res = await fetch('http://localhost:5000/login', {
+            const res = await fetch('https://online-shop-production-9248.up.railway.app/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),

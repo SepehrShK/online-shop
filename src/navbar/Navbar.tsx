@@ -25,9 +25,9 @@ const Navbar = () => {
             <div className="left-nav">
                 {/* اگه فرد وارد نشده باشه */}
                 {!isLoggedIn && (
-                    <Link to="/Login">
-                        <button className="loginButton-userDropdown" type="button"><span>ورود</span></button>
-                    </Link>
+                    <button className="loginButton-userDropdown" type="button">
+                        <span><Link to="/Login">ورود</Link></span>
+                    </button>
                 )}
                 {/* اگه فرد وارد شده باشه */}
                 {isLoggedIn && (

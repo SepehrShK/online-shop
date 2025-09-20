@@ -1,42 +1,70 @@
 .nav{
     display: flex;
+    position: relative;
+    flex-wrap: wrap;
     max-width: 1152px;
+    height: 50px;
     padding: 1rem 1.5rem;
     background-color: #e6ded2;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: space-between;
+    align-items: center; */
 }
 
+/* right nav */
 .right-nav{
     display: flex;
+    position: absolute;
+    right: 24px;
     gap: 35px;
     align-items: center;
 }
 
-.home-link{
+.nav-links{
+    display: flex;
+    height: 50px;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a{
     text-decoration: none;
     color: black;
 }
 
+/* middle nav */
 .input-div{
     display: flex;
+    position: absolute;
+    right: 100px;
     background-color: white;
     border-radius: 10px;
-    height: 40px;
+    height: 50px;
+    width: 260px;
     align-items: center;
     padding: 0 0.8rem;
 }
 
 .input-field{
     border: none;
-    height: 30px;
+    height: 40px;
+    width: 240px;
     border-radius: 10px;
     font-size: 1.2rem;
     margin-right: 0.3rem;
+    padding: 0;
 }
 
 .input-field:focus{
     outline: none;
+}
+
+/* left nav */
+.left-nav{
+    position: absolute;
+    left: 24px;
 }
 
 .loginButton-userDropdown{
@@ -66,6 +94,7 @@
     transform: rotate(180deg);
 }
 
+/* left nav when logged in */
 .dropdown-menu{
     position: absolute;
     width: 134px;
@@ -91,4 +120,47 @@
 
 .logout-button:hover{
     background-color: red;
+}
+
+/* smaller screen */
+@media (max-width: 650px){
+    .nav{
+        height: 120px;
+    }
+
+    .input-div{
+        right: 24px;
+        top: 86px;
+    }
+}
+
+@media (max-width: 450px){
+    .nav{
+        height: 110px;
+    }
+
+    .input-div{
+        width: 200px;
+        height: 40px;
+    }
+
+    .input-field{
+        width: 180px;
+        height: 30px;
+    }
+
+    .loginButton-userDropdown{
+        width: 100px;
+        height: 40px;
+    }
+
+    .dropdown-menu{
+        width: 84px;
+    }
+
+    .logout-button{
+        width: 84px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
 }

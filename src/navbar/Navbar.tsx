@@ -12,11 +12,15 @@ const Navbar = () => {
     return (
         <nav className="nav">
             <div className="right-nav">
-                <Link className="home-link" to="/">خانه</Link>
-                <div className="input-div">
-                    {<CiSearch size={20}/>}
-                    <input className="input-field" placeholder="جست و جو..." />
-                </div>
+                <ul className="nav-links">
+                    <li className="home-link">
+                        <Link to="/">home</Link>
+                    </li>
+                </ul>
+            </div>
+            <div className="input-div">
+                {<CiSearch size={20}/>}
+                <input className="input-field" placeholder="جست و جو..." />
             </div>
             <div className="left-nav">
                 {/* اگه فرد وارد نشده باشه */}

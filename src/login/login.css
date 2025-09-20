@@ -5,6 +5,7 @@
 
 }
 
+/* popup when loggin in */
 .popup{
     position: fixed;
     top: 50px;
@@ -18,6 +19,7 @@
     border-radius: 20px;
 }
 
+/* login */
 .login-form{
     padding: 1rem;
     display: grid;
@@ -54,4 +56,25 @@
 
 .login-form button:hover{
     background-color: #faf3e0;
+}
+
+
+/* smaller screen */
+@media (max-width: 550px){
+    .popup{
+        width: 200px;
+    }
+
+    .login-form{
+        width: 368px;
+    }
+
+    .login-form input{
+        width: 198px;
+    }
+
+    .login-form button{
+        width: 130px;
+        height: 40px;
+    }
 }

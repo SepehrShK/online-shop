@@ -1,0 +1,94 @@
+.nav{
+    display: flex;
+    max-width: 1152px;
+    padding: 1rem 1.5rem;
+    background-color: #e6ded2;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-nav{
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.home-link{
+    text-decoration: none;
+    color: black;
+}
+
+.input-div{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    height: 40px;
+    align-items: center;
+    padding: 0 0.8rem;
+}
+
+.input-field{
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.input-field:focus{
+    outline: none;
+}
+
+.loginButton-userDropdown{
+    display: flex;
+    width: 150px;
+    height: 50px;
+    font-size: 1.1rem;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color ease 0.3s;
+    cursor: pointer;
+}
+
+.loginButton-userDropdown:hover{
+    background-color: #faf3e0;
+}
+
+
+.arrow-icon{
+    transition: transform 0.3s;
+}
+
+.arrow-icon.up{
+    transform: rotate(180deg);
+}
+
+.dropdown-menu{
+    position: absolute;
+    width: 134px;
+    background: #d6c9b7;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    list-style: none;
+}
+
+.logout-button{
+    display: flex;
+    width: 134px;
+    height: 50px;
+    font-size: 1.1rem;
+    border: 1px solid red;
+    border-radius: 10px;
+    transition: background-color ease 0.3s;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-button:hover{
+    background-color: red;
+}

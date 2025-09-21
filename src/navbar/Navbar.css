@@ -7,21 +7,20 @@
     padding: 1rem 1.5rem;
     background-color: #e6ded2;
     justify-content: flex-start;
-    /* justify-content: space-between;
-    align-items: center; */
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* right nav */
 .right-nav{
     display: flex;
-    position: absolute;
-    right: 24px;
     gap: 35px;
     align-items: center;
 }
 
 .nav-links{
     display: flex;
+    gap: 30px;
     height: 50px;
     list-style: none;
     align-items: center;
@@ -29,20 +28,63 @@
     margin: 0;
 }
 
-.nav-links a{
+.nav-link{
+    display: flex;
+    position: relative;
+    text-align: center;
+}
+
+.nav-link a{
     text-decoration: none;
     color: black;
 }
 
-/* middle nav */
+.arrow-icon{
+    transition: transform 0.3s;
+    cursor: pointer;
+    margin-right: -0.5rem;
+}
+
+.arrow-icon.up{
+    transform: rotate(180deg);
+}
+
+.nav-link span{
+    cursor: pointer;
+}
+
+/* right nav when logged in */
+.dropdown-menu{
+    position: absolute;
+    top: 30px;
+    width: 118px;
+    background: #d6c9b7;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    list-style: none;
+}
+
+.logout-button{
+    display: flex;
+    width: 116px;
+    height: 50px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* input nav */
 .input-div{
     display: flex;
-    position: absolute;
-    right: 100px;
     background-color: white;
     border-radius: 10px;
     height: 50px;
-    width: 260px;
+    width: 320px;
     align-items: center;
     padding: 0 0.8rem;
 }
@@ -50,7 +92,7 @@
 .input-field{
     border: none;
     height: 40px;
-    width: 240px;
+    width: 300px;
     border-radius: 10px;
     font-size: 1.2rem;
     margin-right: 0.3rem;
@@ -61,110 +103,85 @@
     outline: none;
 }
 
-/* left nav */
-.left-nav{
-    position: absolute;
-    left: 24px;
-}
-
-.loginButton-userDropdown{
-    display: flex;
-    width: 150px;
-    height: 50px;
-    font-size: 1.1rem;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    transition: background-color ease 0.3s;
+/* menu for smaller screens */
+.menu-toggle{
+    display: none;
     cursor: pointer;
 }
 
-.loginButton-userDropdown:hover{
-    background-color: #faf3e0;
+.hamburger-icon{
+    transition: color 0.3s;
+    color: white;
+}
+.hamburger-icon:hover{
+    color: #faf3e0;
 }
 
-.loginButton-userDropdown a{
-    text-decoration: none;
-    color: black;
-}
-
-.arrow-icon{
-    transition: transform 0.3s;
-}
-
-.arrow-icon.up{
-    transform: rotate(180deg);
-}
-
-/* left nav when logged in */
-.dropdown-menu{
-    position: absolute;
-    width: 134px;
-    background: #d6c9b7;
-    border-radius: 10px;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    list-style: none;
-}
-
-.logout-button{
-    display: flex;
-    width: 134px;
-    height: 50px;
-    font-size: 1.1rem;
-    border: 1px solid red;
-    border-radius: 10px;
-    transition: background-color ease 0.3s;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-}
-
-.logout-button:hover{
-    background-color: red;
-}
-
-/* smaller screen */
-@media (max-width: 650px){
-    .nav{
-        height: 120px;
+/* smaller screen styles */
+@media (max-width: 750px){
+    .nav-links{
+        position: absolute;
+        height: auto;
+        top: 60px;
+        right: 6px;
+        background: #d6c9b7;
+        flex-direction: column;
+        width: 118px;
+        padding: 1rem;
+        display: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    .input-div{
-        right: 24px;
-        top: 86px;
-    }
-}
-
-@media (max-width: 450px){
-    .nav{
-        height: 110px;
+    .nav-links.active{
+        display: flex;
+        align-items: start;
     }
 
-    .input-div{
-        width: 200px;
-        height: 40px;
+    .nav-link{
+        flex-wrap: wrap;
     }
 
-    .input-field{
-        width: 180px;
-        height: 30px;
-    }
-
-    .loginButton-userDropdown{
-        width: 100px;
-        height: 40px;
+    .menu-toggle{
+        display: flex;
     }
 
     .dropdown-menu{
-        width: 84px;
+        position: static;
+        padding: 0;
     }
 
-    .logout-button{
-        width: 84px;
-        height: 40px;
-        font-size: 0.8rem;
+    .input-div{
+        width: 250px;
+        margin-right: 0.5rem;
+    }
+
+    .input-field{
+        width: 230px;
+    }
+}
+
+@media (max-width: 400px){
+    .nav{
+        padding: 1rem;
+    }
+
+    .input-div{
+        width: 210px;
+        margin-right: 0.5rem;
+    }
+
+    .input-field{
+        width: 190px;
+    }
+}
+
+@media (max-width: 340px){
+    .input-div{
+        width: 170px;
+        margin-right: 0.5rem;
+    }
+
+    .input-field{
+        width: 150px;
     }
 }

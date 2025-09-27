@@ -58,7 +58,7 @@ const Login = () => {
             )}
             <form className='login-form' onSubmit={handleSubmit}>
                 <label htmlFor='username' >نام کاربری:</label>
-                <input id='username' type='text' placeholder='username is admin' value={username} onChange={e => setUsername(e.target.value)} />
+                <input id='username' type='text' placeholder='username is admin' value={username} onChange={e => setUsername(e.target.value.toLowerCase())} />
 
                 <label htmlFor='password' >رمز عبور:</label>
                 <input id='password' type='password' placeholder='password is 1234' value={password} onChange={e => setPassword(e.target.value)} />

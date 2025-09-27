@@ -1,4 +1,5 @@
 import { useAuth } from '../context/useAuth';
+import Products from '../products/Products';
 
 const Dashboard = () => {
     const { role } = useAuth();
@@ -18,6 +19,7 @@ const Dashboard = () => {
                     <p>سلام ادمین</p>
                 </div>
             )}
+            <Products/>
         </div>
     );
 }

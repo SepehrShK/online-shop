@@ -46,19 +46,30 @@
     background-color: #d3cabc; 
 }
 
-@media (max-width: 590px){
+@media (max-width: 600px){
     .product-card{
         width: auto;
-        margin: 0 1rem;
+    }
+    .product-info{
+        display: flex;
+        gap: 10px;
     }
 
-    .product-card img{
-        width: 350px;
+    .product-info img{
+        width: 150px;
+    }
+
+    .product-card button{
+        margin-top: 15px;
     }
 }
 
 @media (max-width: 450px){
-    .product-card img{
-        width: 240px;
+    .product-info img{
+        width: 110px;
+    }
+
+    .product-p p{
+        font-size: 0.8rem;
     }
 }

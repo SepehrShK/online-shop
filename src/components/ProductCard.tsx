@@ -13,10 +13,13 @@ const ProductCard: React.FC<ProductCardProp> = ({ id, name, price, imgurl }) => 
 
     return (
         <div className="product-card">
-            <img src={imgurl} alt={'photo'}/>
-            <p className="name-p">{name}</p>
-            <p className="price-p">{price.toLocaleString("fa-IR")} تومان</p>
-
+            <div className="product-info">
+                <img src={imgurl} alt={'photo'} />
+                <div className="product-p">
+                    <p className="name-p">{name}</p>
+                    <p className="price-p">{price.toLocaleString("fa-IR")} تومان</p>
+                </div>
+            </div>
             <button type="button" onClick={addToShoplist}>افزودن به سبد خرید</button>
         </div>
     )

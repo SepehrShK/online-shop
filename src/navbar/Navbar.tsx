@@ -6,7 +6,12 @@ import { useAuth } from "../context/useAuth";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Navbar = () => {
+interface NavProps {
+    searchProduct: string;
+    setSearchProduct: (value: string) => void;
+}
+
+const Navbar: React.FC<NavProps> = ({ searchProduct, setSearchProduct }) => {
     const { logout, isLoggedIn } = useAuth();
     const [openProfile, setOpenProfile] = useState<boolean>(false);
     const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -51,7 +56,7 @@ const Navbar = () => {
             {/* فیلد سرچ محصول */}
             <div className="input-div">
                 {<CiSearch size={20}/>}
-                <input className="input-field" placeholder="جست و جو..." />
+                <input className="input-field" placeholder="جست و جو..." value={searchProduct} onChange={e => setSearchProduct(e.target.value)} />
             </div>
         </nav>
     )

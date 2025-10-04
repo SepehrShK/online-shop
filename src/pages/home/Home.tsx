@@ -6,7 +6,7 @@ const Home: React.FC<{ searchProduct: string }> = ({ searchProduct }) => {
     return (
         <>
             <Dashboard/>
-            <Products searchProduct={searchProduct}/>
+            <Products searchProduct={searchProduct} />
         </>
     )
 }

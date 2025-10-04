@@ -1,6 +1,7 @@
 .nav{
     display: flex;
-    position: relative;
+    position: sticky;
+    top: 0;
     flex-wrap: wrap;
     max-width: 1184px;
     height: 50px;
@@ -15,7 +16,7 @@
 /* right nav */
 .right-nav{
     display: flex;
-    gap: 35px;
+    gap: 30px;
     align-items: center;
 }
 
@@ -52,6 +53,15 @@
 
 .nav-link span{
     cursor: pointer;
+}
+
+.shopcart-button{
+    background-color: #e6ded2;
+    border: none;
+}
+
+.shopcart-icon{
+    color: black;
 }
 
 /* right nav when logged in */
@@ -110,16 +120,13 @@
     cursor: pointer;
 }
 
-.hamburger-icon{
-    transition: color 0.3s;
-    color: white;
-}
-.hamburger-icon:hover{
-    color: #faf3e0;
-}
 
 /* smaller screen styles */
-@media (max-width: 750px){
+@media (max-width: 650px){
+    .right-nav{
+        gap: 15px;
+    }
+
     .nav-links{
         position: absolute;
         height: auto;
@@ -152,18 +159,22 @@
     }
 
     .input-div{
-        width: 250px;
+        width: 230px;
         margin-right: 0.5rem;
     }
 
     .input-field{
-        width: 230px;
+        width: 210px;
     }
 }
 
 @media (max-width: 400px){
     .nav{
         padding: 1rem;
+    }
+
+    .right-nav{
+        gap: 10px;
     }
 
     .input-div{

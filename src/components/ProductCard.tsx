@@ -1,3 +1,5 @@
+import { useShopCart } from "../context/shopCartContext/useShopCart"
+
 interface ProductCardProp{
     id: number
     name: string
@@ -6,10 +8,7 @@ interface ProductCardProp{
 }
 
 const ProductCard: React.FC<ProductCardProp> = ({ id, name, price, imgurl }) => {
-
-    const addToShoplist = () => {
-        console.log(id);
-    }
+    const { addToShopCart } = useShopCart()
 
     return (
         <div className="product-card">
@@ -20,7 +19,7 @@ const ProductCard: React.FC<ProductCardProp> = ({ id, name, price, imgurl }) => 
                     <p className="price-p">{price.toLocaleString("fa-IR")} تومان</p>
                 </div>
             </div>
-            <button type="button" onClick={addToShoplist}>افزودن به سبد خرید</button>
+            <button type="button" onClick={() => addToShopCart(id)}>افزودن به سبد خرید</button>
         </div>
     )
 }

@@ -1,36 +1,10 @@
-import { useEffect, useState } from "react";
 import ProductCard from "../../../components/ProductCard";
 import './Products.css'
+import { useData } from "../../../context/dataContext/useData";
 
-interface Product{
-    id: number
-    name: string
-    price: number
-    imgurl: string
-}
 
-const Products: React.FC<{searchProduct: string}> = ({searchProduct}) => {
-    const [products, setProducts] = useState<Product[]>([]);
-    
-    //دریافت محصولات هنگام باز شدن صفحه خانه
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const res = await fetch("https://online-shop-production-9248.up.railway.app/products");
-                const data: Product[] = await res.json();
-                
-                setProducts(data.map(p => ({
-                    ...p,
-                    id: Number(p.id),
-                    price: Number(p.price)
-                })));
-            } catch (err) {
-                console.error("Error fetching products:", err);
-            }
-        };
-
-        fetchProducts();
-    }, []);
+const Products: React.FC<{ searchProduct: string }> = ({ searchProduct }) => {
+    const {products} = useData()
 
     //فیلتر کارت محصولات بر اساس ورودی در منوی بالای صفحه
     const filteredProducts = products.filter((p) => p.name.toLowerCase().includes(searchProduct.toLowerCase()));

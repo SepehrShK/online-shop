@@ -5,6 +5,7 @@ import './Navbar.css'
 import { useAuth } from "../context/useAuth";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { CgShoppingCart } from "react-icons/cg";
 
 interface NavProps {
     searchProduct: string;
@@ -52,6 +53,10 @@ const Navbar: React.FC<NavProps> = ({ searchProduct, setSearchProduct }) => {
                 <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                     <GiHamburgerMenu className="hamburger-icon" size={30} />
                 </div>
+                {/* آیکون سبد خرید */}
+                <button className="shopcart-button" type="button">
+                    <Link to='/ShopCart'>{<CgShoppingCart className="shopcart-icon" size={30} />}</Link>
+                </button>
             </div>
             {/* فیلد سرچ محصول */}
             <div className="input-div">

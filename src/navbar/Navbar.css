@@ -187,7 +187,7 @@
     }
 }
 
-@media (max-width: 340px){
+@media (max-width: 360px){
     .input-div{
         width: 170px;
         margin-right: 0.5rem;

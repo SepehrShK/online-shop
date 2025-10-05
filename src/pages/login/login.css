@@ -44,6 +44,8 @@
 }
 
 .login-form button{
+    -webkit-appearance: none;
+    appearance: none;
     width: 200px;
     height: 40px;
     margin: 30px auto;

@@ -1,3 +1,7 @@
+html{
+    color-scheme: light only;
+}
+
 body{
     font-family: 'Vazirmatn', Tahoma, sans-serif;
     max-width: 1200px;

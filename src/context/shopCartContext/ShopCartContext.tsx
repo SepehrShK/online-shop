@@ -8,6 +8,8 @@ interface CartItem{
 interface ShopCartInterface{
     cart: CartItem[]
     addToShopCart: (id: number) => void
+    addToQuantity: (id: number) => void
+    subtractFromQuantity: (id: number) => void
     removeFromCart: (id: number) => void
     clearCart: () => void
 }
@@ -39,6 +41,24 @@ const ShopCartProvider = ({ children }: { children: ReactNode }) => {
         })
     }
 
+    //اضافه شدن به مقدار
+    const addToQuantity = (id: number) => {
+        setCart((prev) => {
+            return prev.map((item) => (
+                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+            ))
+        })
+    }
+
+    //کم شدن از مقدار
+    const subtractFromQuantity = (id: number) => {
+        setCart((prev) => {
+            return prev.map((item) => (
+                item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+            ))
+        })
+    }
+
     //حذف محصول
     const removeFromCart = (id: number) => {
         setCart((prev) => prev.filter((item) => item.id !== id))
@@ -48,7 +68,7 @@ const ShopCartProvider = ({ children }: { children: ReactNode }) => {
     const clearCart = () => setCart([])
 
     return (
-        <ShopCartContext.Provider value={{ cart, addToShopCart, removeFromCart, clearCart}}>
+        <ShopCartContext.Provider value={{ cart, addToShopCart, addToQuantity, subtractFromQuantity, removeFromCart, clearCart}}>
             {children}
         </ShopCartContext.Provider>
     )

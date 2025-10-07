@@ -56,8 +56,23 @@
 }
 
 .shopcart-button{
+    position: relative;
     background-color: #e6ded2;
     border: none;
+}
+
+.shopcart-button p{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    align-content: center;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin: 0;
+    color: white;
 }
 
 .shopcart-icon{

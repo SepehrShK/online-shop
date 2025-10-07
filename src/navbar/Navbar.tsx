@@ -6,6 +6,7 @@ import { useAuth } from "../context/useAuth";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgShoppingCart } from "react-icons/cg";
+import { useShopCart } from "../context/shopCartContext/useShopCart";
 
 interface NavProps {
     searchProduct: string;
@@ -14,8 +15,11 @@ interface NavProps {
 
 const Navbar: React.FC<NavProps> = ({ searchProduct, setSearchProduct }) => {
     const { logout, isLoggedIn } = useAuth();
+    const { cart } = useShopCart()
     const [openProfile, setOpenProfile] = useState<boolean>(false);
     const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+    const purchasesQuantity = cart.reduce((total, item) => total + 1 * item.quantity, 0)
 
     return (
         <nav className="nav">
@@ -56,6 +60,7 @@ const Navbar: React.FC<NavProps> = ({ searchProduct, setSearchProduct }) => {
                 {/* آیکون سبد خرید */}
                 <button className="shopcart-button" type="button">
                     <Link to='/ShopCart'>{<CgShoppingCart className="shopcart-icon" size={30} />}</Link>
+                    <p>{purchasesQuantity}</p>
                 </button>
             </div>
             {/* فیلد سرچ محصول */}

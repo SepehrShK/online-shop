@@ -1,11 +1,11 @@
-import Dashboard from './dashboard/Dashboard'
+// import Dashboard from './dashboard/Dashboard'
 import Products from './products/Products'
 
 
 const Home: React.FC<{ searchProduct: string }> = ({ searchProduct }) => {
     return (
         <>
-            <Dashboard/>
+            {/* <Dashboard/> */}
             <Products searchProduct={searchProduct} />
         </>
     )

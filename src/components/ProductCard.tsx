@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useShopCart } from "../context/shopCartContext/useShopCart"
 
 interface ProductCardProp{
@@ -9,6 +10,15 @@ interface ProductCardProp{
 
 const ProductCard: React.FC<ProductCardProp> = ({ id, name, price, imgurl }) => {
     const { addToShopCart } = useShopCart()
+    const [addToShopText, setAddToShopText] = useState('افزودن به سبد خرید')
+
+    const changeText = () => {
+        setAddToShopText('اضافه شد')
+        setTimeout(() => {
+            setAddToShopText('افزودن به سبد خرید')
+        }, 1500);
+    }
+
 
     return (
         <div className="product-card">
@@ -19,7 +29,10 @@ const ProductCard: React.FC<ProductCardProp> = ({ id, name, price, imgurl }) => 
                     <p className="price-p">{price.toLocaleString("fa-IR")} تومان</p>
                 </div>
             </div>
-            <button type="button" onClick={() => addToShopCart(id)}>افزودن به سبد خرید</button>
+            <button type="button" onClick={() => {
+                addToShopCart(id)
+                changeText()
+            }}>{addToShopText}</button>
         </div>
     )
 }

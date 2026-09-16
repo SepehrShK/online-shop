@@ -4,6 +4,19 @@
     gap: 20px;
 }
 
+.products-retry{
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 0.9rem;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #e6ded2;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 .product-card{
     display: grid;
     width: 238px;

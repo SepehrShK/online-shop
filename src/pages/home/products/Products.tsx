@@ -4,7 +4,28 @@ import { useData } from "../../../context/dataContext/useData";
 
 
 const Products: React.FC<{ searchProduct: string }> = ({ searchProduct }) => {
-    const {products} = useData()
+    const {products, loading, error, refetch} = useData()
+
+    if (loading) {
+        return (
+            <section className="products-section">
+                <h1>محصولات</h1>
+                <p>در حال بارگذاری...</p>
+            </section>
+        )
+    }
+
+    if (error) {
+        return (
+            <section className="products-section">
+                <h1>محصولات</h1>
+                <p>{error}</p>
+                <button type="button" className="products-retry" onClick={() => refetch()}>
+                    تلاش مجدد
+                </button>
+            </section>
+        )
+    }
 
     //فیلتر کارت محصولات بر اساس ورودی در منوی بالای صفحه
     const filteredProducts = products.filter((p) => p.name.toLowerCase().includes(searchProduct.toLowerCase()));
